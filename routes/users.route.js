@@ -1,9 +1,9 @@
 const UserController = require("../controllers/users.controller");
 const express = require("express");
 
-function setupUsersRoute(usersBusiness) {
+function setupUsersRoute() {
   const router = express.Router();
-  const userController = new UserController(usersBusiness);
+  const userController = new UserController();
   router.post("/users", userController.createUser.bind(userController));
   router.post("/login", userController.login.bind(userController));
   router.get("/profile", userController.getProfile.bind(userController));

@@ -1,9 +1,9 @@
 const express = require("express");
 const MoviesController = require("../controllers/movies.controller");
 
-function setupMoviesRoutes(moviesBusiness) {
+function setupMoviesRoutes() {
   const router = express.Router();
-  const moviesController = new MoviesController(moviesBusiness);
+  const moviesController = new MoviesController();
 
   // Menghubungkan fungsi-fungsi ke endpoint-endpoint yang sesuai
   router.get("/movies", moviesController.getMovies.bind(moviesController));
