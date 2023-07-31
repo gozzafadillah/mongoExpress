@@ -5,7 +5,7 @@ class MoviesController {
     this.moviesService = new MoviesBusiness();
   }
 
-  async getMovies(req, res) {
+  async getMovies(_, res) {
     const movies = await this.moviesService.getMovies();
     return res.status(200).send(movies);
   }

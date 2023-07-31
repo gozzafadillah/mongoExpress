@@ -19,7 +19,7 @@ class UserBusiness {
     try {
       const result = await this.userRepository.verifyUser(user);
       if (result instanceof Error) {
-        return Error(result.message);
+        return Error;
       }
       const token = generateAccessToken({ email: result.email });
       return { result: { name: result.name, email: result.email }, token };

@@ -1,11 +1,14 @@
-const movieModel = require("../models/movies.model");
+const MovieSchema = require("../models/movies.model");
 class MoviesRepository {
   constructor() {
-    this.movies = movieModel;
+    this.movies = MovieSchema;
   }
 
   async createMovie(movie) {
-    const data = new this.movies({ title: movie.title, year: movie.year });
+    const data = new this.movies({
+      title: movie.title,
+      year: movie.year,
+    });
     try {
       const result = await data.save();
       return result;

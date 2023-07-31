@@ -21,7 +21,7 @@ const userRoute = setupUsersRoute();
 const moviesRoutes = setupMoviesRoutes();
 
 // Gunakan rute-rute yang telah didefinisikan
-app.use("/api", authenticateToken, moviesRoutes);
+app.use("/api", moviesRoutes);
 app.use("", userRoute);
 
 // Jalankan aplikasi Express pada port yang ditentukan
